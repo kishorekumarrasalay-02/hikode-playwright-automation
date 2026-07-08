@@ -1,0 +1,42 @@
+{
+  "name": "hikode-signup-automation",
+  "version": "1.0.0",
+  "description": "Playwright automation for HiKode signup flow",
+  "scripts": {
+    "test": "playwright test e2e/full-journey.spec.ts",
+    "test:all-specs": "playwright test --grep-invert signup",
+    "test:headed": "playwright test --headed",
+    "test:headless": "playwright test --headless",
+    "test:ui": "playwright test --ui",
+    "test:signup": "playwright test tests/signup.spec.ts",
+    "test:signin": "playwright test signup/login.spec.ts",
+    "test:dashboard": "playwright test signup/dashboard-navigation.spec.ts",
+    "test:profile": "playwright test profile/profile.spec.ts",
+    "test:jobs": "playwright test jobs/jobs.spec.ts",
+    "test:job-report": "playwright test jobs/job-report.spec.ts",
+    "test:events": "playwright test events/events.spec.ts",
+    "test:coach": "playwright test coach/coaching.spec.ts",
+    "test:contribute": "playwright test contribute/contributions.spec.ts",
+    "test:my-circle": "playwright test my-circle/my-circle.spec.ts",
+    "test:my-plans": "playwright test my-plans/my-plans.spec.ts",
+    "test:my-messages": "playwright test my-messages/my-messages.spec.ts",
+    "test:all": "playwright test e2e/full-journey.spec.ts",
+    "test:journey": "playwright test e2e/full-journey.spec.ts",
+    "test:journey:report": "playwright test e2e/full-journey.spec.ts && npx tsx scripts/print-test-summary.ts && npm run allure:generate",
+    "test:signup:individual": "playwright test tests/signup.spec.ts -g \"individual user\"",
+    "test:signup:organization": "playwright test tests/signup.spec.ts -g \"organization user\"",
+    "report": "playwright show-report",
+    "summary": "npx tsx scripts/print-test-summary.ts",
+    "allure:generate": "allure generate allure-results -o allure-report --clean",
+    "allure:open": "allure open allure-report",
+    "allure:serve": "allure serve allure-results"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.15.0",
+    "allure-commandline": "^2.43.0",
+    "allure-playwright": "^3.10.1",
+    "dotenv": "^16.5.0",
+    "typescript": "^5.8.3"
+  }
+}

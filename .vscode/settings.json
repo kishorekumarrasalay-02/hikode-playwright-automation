@@ -1,0 +1,6 @@
+{
+  "playwright.runOptions": {
+    "headed": true
+  },
+  "playwright.reuseBrowser": false
+}
